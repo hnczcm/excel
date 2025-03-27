@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>畅享星空AI小助手 - Excel插件使用教程</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #4b6cb7, #182848);
+            color: white;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4b6cb7;
+            color: #182848;
+        }
+        h3 {
+            font-size: 1.4em;
+            margin-top: 25px;
+            color: #2c3e50;
+            background-color: #f2f6fc;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        p, li {
+            font-size: 16px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .main-content {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .sidebar {
+            width: 280px;
+            margin-left: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: auto;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+        .feature-card {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f2f6fc;
+            border-left: 4px solid #4b6cb7;
+            border-radius: 5px;
+        }
+        .feature-title {
+            font-weight: bold;
+            color: #4b6cb7;
+            margin-bottom: 10px;
+        }
+        .method-step {
+            margin-left: 20px;
+            padding-left: 15px;
+            border-left: 2px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .note {
+            background-color: #fff8e6;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 4px solid #f0ad4e;
+            margin: 15px 0;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: #182848;
+            color: white;
+            border-radius: 10px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e5e5e5;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            margin: 3px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #4b6cb7;
+        }
+        .button {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #4b6cb7;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #182848;
+        }
+        .toc {
+            background-color: #f2f6fc;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+        .toc li {
+            margin-bottom: 5px;
+        }
+        .toc a {
+            color: #4b6cb7;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f6fc;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>畅享星空AI小助手</h1>
+        <p>智能高效的Excel增强插件 - 使用教程</p>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="toc">
+                <h3>目录</h3>
+                <ul>
+                    <li><a href="#overview">插件概述</a></li>
+                    <li><a href="#ai-assistant">AI智能助手</a></li>
+                    <li><a href="#data-processing">数据处理工具</a></li>
+                    <li><a href="#text-processing">文本处理工具</a></li>
+                    <li><a href="#ui-enhancement">界面增强功能</a></li>
+                    <li><a href="#support">支持与帮助</a></li>
+                    <li><a href="#settings">系统设置</a></li>
+                    <li><a href="#faq">常见问题解答</a></li>
+                    <li><a href="#tips">使用技巧</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </div>
+            
+            <h2 id="overview">插件概述</h2>
+            <p>畅享星空AI小助手是一款功能强大的Excel插件，旨在帮助用户快速高效地完成各种Excel操作，包括复杂公式计算、数据格式化、图表生成，以及通过AI模型提供智能辅助。该插件通过简洁友好的功能区界面，为用户提供一站式Excel增强体验。</p>
+            
+            <div class="image-container">
+                <img src="https://placeholder-image.com/插件界面展示图.jpg" alt="插件界面" />
+                <p><small>插件功能区界面展示</small></p>
+            </div>
+            
+            <h2 id="ai-assistant">AI智能助手</h2>
+            
+            <div class="feature-card">
+                <div class="feature-title">AI聊天助手</div>
+                <p><strong>功能介绍：</strong>直接在Excel中调用豆包、DeepSeek等先进大模型进行交流，解答各类问题并提供智能辅助。</p>
+                
+                <p><strong>使用方法：</strong></p>
+                <div class="method-step">
+                    <p>1. 点击功能区中的"AI聊天"按钮</p>
+                    <p>2. 在弹出的对话框中输入您的问题或需求</p>
+                    <p>3. AI会分析您的问题并给出相应的回答</p>
+                    <p>4. 您可以继续提问或将AI提供的解决方案应用到工作表中</p>
+                </div>
+                
+                <p><strong>应用场景：</strong></p>
+                <div class="tag">解答Excel使用问题</div>
+                <div class="tag">数据分析咨询</div>
+                <div class="tag">编写公式帮助</div>
+                <div class="tag">自然语言查询</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-title">AI生成图表</div>
+                <p><strong>功能介绍：</strong>利用AI分析数据并生成合适的图表，智能推荐最适合数据特性的可视化方式。</p>
+                
+                <p><strong>使用方法：</strong></p>
+                <div class="method-step">
+                    <p>1. 选中需要可视化的数据区域</p>
+                    <p>2. 点击"AI生成图表"按钮</p>
+                    <p>3. AI会分析数据特性并推荐合适的图表类型</p>
+                    <p>4. 选择您喜欢的图表方案，AI会自动生成并插入工作表</p>
+                </div>
+                
+                <p><strong>应用场景：</strong></p>
+                <div class="tag">数据可视化</div>
+                <div class="tag">报表制作</div>
+                <div class="tag">演示准备</div>
+                <div class="tag">趋势分析</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-title">AI公式专家</div>
+                <p><strong>功能介绍：</strong>智能识别数据需求，生成复杂Excel公式，节省编写复杂函数的时间。</p>
+                
+                <p><strong>使用方法：</strong></p>
+                <div class="method-step">
+                    <p>1. 选择目标单元格</p>
+                    <p>2. 点击"AI公式专家"按钮</p>
+                    <p>3. 用自然语言描述您的计算需求（如"计算这些销售数据的季度增长率"）</p>
+                    <p>4. AI会自动生成相应的Excel公式并应用到选定区域</p>
+                </div>
+                
+                <p><strong>应用场景：</strong></p>
+                <div class="tag">复杂计算</div>
+                <div class="tag">条件统计</div>
+                <div class="tag">逻辑函数</div>
+                <div class="tag">数据处理自动化</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-title">万能神器</div>
+                <p><strong>功能介绍：</strong>提供全面的AI辅助功能，解决各类Excel处理需求，一站式解决常见数据分析问题。</p>
+                
+                <p><strong>使用方法：</strong></p>
+                <div class="method-step">
+                    <p>1. 点击"万能神器"按钮</p>
+                    <p>2. 选择您需要的功能类型</p>
+                    <p>3. 根据提示选择数据区域或输入具体需求</p>
+                    <p>4. AI会执行相应操作并返回结果</p>
+                </div>
+                
+                <p><strong>应用场景：</strong></p>
+                <div class="tag">数据清洗</div>
+                <div class="tag">格式转换</div>
+                <div class="tag">条件筛选</div>
+                <div class="tag">统计分析</div>
+            </div>
+            
+            <div class="note">
+                <p><strong>注意：</strong> AI功能依赖于网络连接和相应的API服务。请确保您的计算机已连接互联网，并在配置中正确设置了API密钥。</p>
+            </div>
+            
+            <h2 id="data-processing">数据处理工具</h2>
+            
+            <h3>性别与打钩打×工具</h3>
+            <p><strong>功能介绍：</strong>快速在单元格中添加性别标识或勾选/叉号标记，方便数据整理和分类。</p>
+            
+            <p><strong>使用方法：</strong></p>
+            <ol>
+                <li>选择需要处理的单元格区域</li>
+                <li>点击"性别"或"打钩打×"按钮</li>
+                <li>在弹出的对话框中选择所需格式（男/女；勾/叉等）</li>
+                <li>完成操作后，相应标记会自动添加到选中单元格</li>
+            </ol>
+            
+            <h3>号码格式化工具</h3>
+            <p><strong>功能介绍：</strong>自动格式化各类号码，如手机号、身份证号等，使数据更规范、易读。</p>
+            
+            <table>
+                <tr>
+                    <th>功能</th>
+                    <th>效果</th>
+                    <th>适用场景</th>
+                </tr>
+                <tr>
+                    <td>手机号格式化</td>
+                    <td>将11位手机号转为 133-1234-5678 格式</td>
+                    <td>客户信息表、联系人列表</td>
+                </tr>
+                <tr>
+                    <td>身份证号格式化</td>
+                    <td>将身份证号转为标准格式并验证有效性</td>
+                    <td>人员信息管理、身份验证</td>
+                </tr>
+                <tr>
+                    <td>银行卡号格式化</td>
+                    <td>按每4位分组显示银行卡号</td>
+                    <td>财务数据、支付信息</td>
+                </tr>
+            </table>
+            
+            <h3>数值格式化工具</h3>
+            <p><strong>功能介绍：</strong>提供各种数值格式化选项，包括货币、千分位、小数位等，美化数据展示。</p>
+            
+            <p><strong>主要功能：</strong></p>
+            <ul>
+                <li><strong>元</strong> - 将数值转换为人民币格式（如 ¥1,234.56）</li>
+                <li><strong>万</strong> - 将数值转换为"万"为单位的格式（如 123.46万）</li>
+                <li><strong>逗号</strong> - 添加千位分隔符（如 1,234,567）</li>
+                <li><strong>壹</strong> - 将数字转换为中文大写格式（如 壹仟贰佰叁拾肆元伍角陆分）</li>
+            </ul>
+            
+            <h3>四舍五入工具</h3>
+            <p><strong>功能介绍：</strong>提供多种舍入方式，包括四舍五入、向上舍入、向下舍入等，精确控制数值显示。</p>
+            
+            <p><strong>使用方法：</strong></p>
+            <ol>
+                <li>选择需要舍入处理的数值单元格</li>
+                <li>点击对应的舍入按钮（四舍五入、向上舍入、向下舍入等）</li>
+                <li>在弹出的对话框中设置保留小数位数</li>
+                <li>系统会按指定方式处理数值并更新单元格</li>
+            </ol>
+            
+            <h2 id="text-processing">文本处理工具</h2>
+            <p><strong>功能介绍：</strong>提供一系列文本处理功能，如大小写转换、自动换行、文本提取等，优化文本数据处理效率。</p>
+            
+            <p><strong>主要功能：</strong></p>
+            <ul>
+                <li><strong>首字母大写</strong> - 将文本的首字母转为大写</li>
+                <li><strong>全部大写</strong> - 将文本全部转为大写字母</li>
+                <li><strong>全部小写</strong> - 将文本全部转为小写字母</li>
+                <li><strong>自动换行</strong> - 为单元格设置自动换行属性</li>
+                <li><strong>文本筛选</strong> - 保留或移除特定类型的字符（如中文、英文、数字等）</li>
+                <li><strong>提取信息</strong> - 从复杂文本中提取特定信息（如姓名、日期等）</li>
+            </ul>
+            
+            <h2 id="ui-enhancement">界面增强功能</h2>
+            
+            <h3>行列高亮工具</h3>
+            <p><strong>功能介绍：</strong>增强Excel的可读性，通过高亮显示当前选中单元格所在的行和列，方便数据查看和编辑。</p>
+            
+            <p><strong>使用方法：</strong></p>
+            <ol>
+                <li>点击"行列高亮"按钮开启功能</li>
+                <li>选择任意单元格，插件会自动高亮显示该单元格所在的行和列</li>
+                <li>点击"聚光灯设置"可以调整高亮颜色和显示模式（仅行、仅列、行列同时）</li>
+                <li>点击"关闭高亮"可随时关闭此功能</li>
+            </ol>
+            
+            <div class="note">
+                <p>高亮功能对大型表格或频繁数据查找非常有用，可以显著提高工作效率。</p>
+            </div>
+            
+            <h2 id="support">支持与帮助</h2>
+            
+            <h3>联系客服</h3>
+            <p>如遇到使用问题或需要技术支持，可以通过"联系客服"按钮直接联系我们的团队获取帮助。</p>
+            
+            <h3>官方网址</h3>
+            <p>点击"官方网址"按钮，可以访问插件的官方网站：<a href="https://hnczcm.github.io/cxxk/" target="_blank">https://hnczcm.github.io/cxxk/</a>，获取最新资讯和更新信息。</p>
+            
+            <h3>使用教程</h3>
+            <p>插件内置详细的使用指南，点击"使用教程"按钮即可查看全面的功能说明和操作指引。</p>
+            
+            <h2 id="settings">系统设置</h2>
+            
+            <h3>配置模块</h3>
+            <p><strong>功能介绍：</strong>自定义插件的各项设置，包括AI模型选择、API密钥配置、界面偏好等。</p>
+            
+            <p><strong>主要设置项：</strong></p>
+            <ul>
+                <li><strong>AI模型选择</strong> - 设置默认使用的语言模型（豆包、DeepSeek等）</li>
+                <li><strong>API密钥配置</strong> - 输入和管理各AI服务的API密钥</li>
+                <li><strong>界面字体与样式</strong> - 自定义插件界面的显示风格</li>
+                <li><strong>默认格式设置</strong> - 设置数据格式化的默认参数</li>
+                <li><strong>自动保存选项</strong> - 配置自动保存和备份选项</li>
+            </ul>
+            
+            <h2 id="faq">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <p class="faq-question">Q: 如何获取API密钥？</p>
+                <p>A: 您可以访问相应AI服务提供商的官方网站（如豆包、DeepSeek等）申请API密钥，然后在插件的配置模块中进行设置。通常需要注册账号并按照平台指引创建应用获取密钥。</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Q: 插件支持哪些Excel版本？</p>
+                <p>A: 本插件支持Excel 2016及以上版本，包括Office 365。较旧版本可能无法支持部分高级功能。</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Q: 如何更新插件？</p>
+                <p>A: 插件会自动检查更新，您也可以在官方网站下载最新版本进行手动更新。更新后需要重启Excel以应用新版本。</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Q: 使用AI功能是否需要联网？</p>
+                <p>A: 是的，AI功能需要连接到互联网以调用相应的语言模型服务。其他基础功能（如格式化、文本处理）可在离线状态下使用。</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Q: 数据安全性如何保障？</p>
+                <p>A: 插件对通过AI服务处理的数据采取了严格的安全措施，不会永久存储用户数据。所有数据传输均采用加密方式，确保信息安全。</p>
+            </div>
+            
+            <h2 id="tips">使用技巧</h2>
+            
+            <ol>
+                <li><strong>组合使用功能</strong> - 例如，先使用AI生成数据，再应用格式化工具进行美化，最后使用行列高亮功能进行检查</li>
+                <li><strong>利用快捷键</strong> - 熟悉插件的快捷键可以大大提高操作效率，常用功能都设有快捷键</li>
+                <li><strong>保存常用设置</strong> - 对于经常使用的格式化选项，可以在配置中设为默认值，减少重复设置的时间</li>
+                <li><strong>定期更新API密钥</strong> - 确保AI功能正常运行，建议定期检查和更新API密钥的有效性</li>
+                <li><strong>灵活运用AI提示</strong> - 使用AI功能时，清晰具体的提示语可以获得更准确的结果</li>
+            </ol>
+            
+            <h2 id="contact">联系我们</h2>
+            
+            <p>如果您有任何问题或建议，请通过以下方式联系我们：</p>
+            <ul>
+                <li>官方网站：<a href="https://hnczcm.github.io/cxxk/" target="_blank">https://hnczcm.github.io/cxxk/</a></li>
+                <li>技术支持：通过插件"联系客服"按钮</li>
+                <li>问题反馈：使用插件内的"反馈"功能</li>
+            </ul>
+            
+            <p>感谢您使用畅享星空AI小助手，我们将不断完善功能，为您提供更优质的Excel辅助体验！</p>
+            
+            <a href="#" class="button">返回顶部</a>
+        </div>
+        
+        <div class="sidebar">
+            <h3>快速链接</h3>
+            <ul>
+                <li><a href="#overview">插件概述</a></li>
+                <li><a href="#ai-assistant">AI智能助手</a></li>
+                <li><a href="#data-processing">数据处理工具</a></li>
+                <li><a href="#text-processing">文本处理工具</a></li>
+                <li><a href="#ui-enhancement">界面增强功能</a></li>
+                <li><a href="#settings">系统设置</a></li>
+            </ul>
+            
+            <h3>版本信息</h3>
+            <p>当前版本：v2.5.1</p>
+            <p>更新日期：2025年3月127日</p>
+            <a href="#" class="button">检查更新</a>
+            
+            <h3>资源下载</h3>
+            <ul>
+                <li><a href="#">用户手册 PDF版</a></li>
+                <li><a href="#">视频教程</a></li>
+                <li><a href="#">示例文件</a></li>
+                <li><a href="#">常见问题集锦</a></li>
+            </ul>
+            
+            <h3>热门功能</h3>
+            <div class="tag">AI聊天助手</div>
+            <div class="tag">公式生成</div>
+            <div class="tag">行列高亮</div>
+            <div class="tag">数据格式化</div>
+            <div class="tag">身份证提取</div>
+            <div class="tag">图表智能生成</div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 畅享星空AI小助手 版权所有</p>
+        <p>提供智能、高效的Excel增强体验</p>
+    </footer>
+    
+    <script>
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 返回顶部按钮
+        let topButton = document.querySelector('.button');
+        topButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
