@@ -185,6 +185,19 @@
     </style>
 </head>
 <body>
+    <!-- 添加音频元素 -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="cxxk.mp3" type="audio/mpeg">
+        您的浏览器不支持音频元素。
+    </audio>
+
+    <!-- 添加音乐控制按钮 -->
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: rgba(75, 108, 183, 0.8); padding: 10px; border-radius: 5px;">
+        <button id="musicControl" style="background: none; border: none; color: white; cursor: pointer;">
+            🔇 关闭音乐
+        </button>
+    </div>
+
     <header>
         <h1>畅享星空AI小助手</h1>
         <p>智能高效的Excel增强插件 - 使用教程</p>
@@ -524,6 +537,27 @@
                 behavior: 'smooth'
             });
         });
+
+        // 添加音乐控制功能
+        const bgMusic = document.getElementById('bgMusic');
+        const musicControl = document.getElementById('musicControl');
+        let isMusicPlaying = true;
+
+        musicControl.addEventListener('click', function() {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicControl.textContent = '🔈 播放音乐';
+            } else {
+                bgMusic.play();
+                musicControl.textContent = '🔇 关闭音乐';
+            }
+            isMusicPlaying = !isMusicPlaying;
+        });
+
+        // 处理自动播放策略
+        document.addEventListener('click', function() {
+            bgMusic.play();
+        }, { once: true });
     </script>
 </body>
 </html>
